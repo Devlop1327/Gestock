@@ -1,0 +1,28 @@
+<h2>Configuración de usuario</h2>
+<form (ngSubmit)="guardar()" style="max-width: 400px; margin-bottom: 2rem;">
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="user.name" name="name" required>
+  </mat-form-field>
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+    <mat-label>Correo electrónico</mat-label>
+    <input matInput [(ngModel)]="user.email" name="email" required type="email">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Guardar cambios</button>
+</form>
+
+<div style="margin-bottom: 2rem;">
+  <button mat-stroked-button color="accent" (click)="cambiarTema()">
+    Cambiar a tema {{ temaOscuro ? 'claro' : 'oscuro' }}
+  </button>
+</div>
+
+<div *ngIf="esAdmin1()" style="margin-top: 2rem;">
+  <h3>Opciones de administración</h3>
+  <button mat-raised-button color="warn" style="margin-bottom: 1rem;" (click)="limpiarCache()">Limpiar caché</button>
+  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+    <a mat-stroked-button color="primary" routerLink="/admin/usuarios">Gestión de Usuarios</a>
+    <a mat-stroked-button color="primary" routerLink="/admin/reportes">Reportes</a>
+    <a mat-stroked-button color="primary" routerLink="/admin/permisos">Permiso</a>
+  </div>
+</div>

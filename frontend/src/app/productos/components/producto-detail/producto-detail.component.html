@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2>Detalle del Producto</h2>
+    </div>
+    <div class="card-body text-center" *ngIf="loading">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2">Cargando producto...</p>
+    </div>
+    <div class="card-body" *ngIf="!loading && producto">
+      <p><strong>Código:</strong> {{ producto.codigo }}</p>
+      <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+      <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+      <p><strong>Precio:</strong> {{ producto.precio | currency }}</p>
+      <p><strong>Stock:</strong> {{ producto.stock }}</p>
+      <p><strong>Stock Mínimo:</strong> {{ producto.stock_minimo }}</p>
+      <p><strong>Categoría:</strong> {{ getCategoriaNombre(producto.categoria_id) }}</p>
+      <p><strong>Proveedor:</strong> {{ getProveedorNombre(producto.proveedor_id) }}</p>
+      <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+    <div class="card-body" *ngIf="!loading && errorMsg">
+      <p class="text-danger">{{ errorMsg }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<ng-container *ngIf="mostrarNavbar">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/productos">GESTOCK</a>
+    <div class="collapse navbar-collapse justify-content-end">
+      <div class="me-3">
+        <button mat-button [matMenuTriggerFor]="perfilMenu" class="btn btn-outline-primary">
+          <i class="bi bi-person-circle"></i> Mi perfil
+        </button>
+        <mat-menu #perfilMenu="matMenu">
+          <button mat-menu-item *ngIf="isAdmin" routerLink="/admin">Panel de administración</button>
+          <button mat-menu-item *ngIf="isAdmin" (click)="limpiarCacheDesdeNavbar()">Limpiar caché</button>
+          <button mat-menu-item routerLink="/perfil/cambiar-password">Cambiar contraseña</button>
+          <button mat-menu-item *ngIf="!isAdmin" routerLink="/perfil/configuracion">Configuración</button>
+        </mat-menu>
+      </div>
+      <button class="btn btn-outline-danger ms-auto" (click)="logout()">Cerrar sesión</button>
+    </div>
+  </div>
+</nav>
+</ng-container>

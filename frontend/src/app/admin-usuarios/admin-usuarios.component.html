@@ -1,0 +1,22 @@
+<h3>Gestión de Usuarios (Admin)</h3>
+<table class="table table-bordered table-striped" *ngIf="usuarios.length">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Rol</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of usuarios">
+      <td>{{ u.name }}</td>
+      <td>{{ u.email }}</td>
+      <td>{{ u.role?.nombre || u.role_id }}</td>
+      <td>
+        <button mat-button color="primary" (click)="abrirModalCambioClave(u)">Cambiar contraseña</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="!usuarios.length">No hay usuarios registrados.</div>

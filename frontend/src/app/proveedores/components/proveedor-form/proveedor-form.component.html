@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">{{ esEdicion ? 'Editar Proveedor' : 'Nuevo Proveedor' }}</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()" class="mt-4">
+        <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ error }}
+          <button type="button" class="btn-close" (click)="error = ''" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre *</label>
+          <input type="text" class="form-control" id="nombre" formControlName="nombre"
+                 [class.is-invalid]="proveedorForm.get('nombre')?.invalid && proveedorForm.get('nombre')?.touched">
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('nombre')?.errors?.['required']">
+            El nombre es requerido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="direccion" class="form-label">Dirección *</label>
+          <input type="text" class="form-control" id="direccion" formControlName="direccion"
+                 [class.is-invalid]="proveedorForm.get('direccion')?.invalid && proveedorForm.get('direccion')?.touched">
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('direccion')?.errors?.['required']">
+            La dirección es requerida
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono *</label>
+          <input type="text" class="form-control" id="telefono" formControlName="telefono"
+                 [class.is-invalid]="proveedorForm.get('telefono')?.invalid && proveedorForm.get('telefono')?.touched">
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('telefono')?.errors?.['required']">
+            El teléfono es requerido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email *</label>
+          <input type="email" class="form-control" id="email" formControlName="email"
+                 [class.is-invalid]="proveedorForm.get('email')?.invalid && proveedorForm.get('email')?.touched">
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('email')?.errors?.['required']">
+            El email es requerido
+          </div>
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('email')?.errors?.['email']">
+            El email no es válido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="nit" class="form-label">NIT *</label>
+          <input type="text" class="form-control" id="nit" formControlName="nit"
+                 [class.is-invalid]="proveedorForm.get('nit')?.invalid && proveedorForm.get('nit')?.touched">
+          <div class="invalid-feedback" *ngIf="proveedorForm.get('nit')?.errors?.['required']">
+            El NIT es requerido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="contacto" class="form-label">Contacto</label>
+          <input type="text" class="form-control" id="contacto" formControlName="contacto">
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+          <button type="button" class="btn btn-secondary me-2" (click)="goBack()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="proveedorForm.invalid || submitting">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+            {{ submitting ? 'Guardando...' : 'Guardar Proveedor' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

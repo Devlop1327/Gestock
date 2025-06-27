@@ -1,0 +1,59 @@
+# ---------------------------------------------
+# Laravel & Angular integrated project .gitignore
+# ---------------------------------------------
+
+# --- Laravel ---
+/vendor/
+/node_modules/            # if using npm/yarn in Laravel (e.g. Mix)
+/public/storage
+/storage/*.key
+/storage/*.sqlite
+/storage/logs/*
+/storage/framework/{sessions,views,cache}/*
+/bootstrap/cache/*.php
+
+# Environment files
+/.env
+/.env.*.backup
+/.env.testing
+
+# IDE helpers & PHPUnit
+/.phpunit.result.cache
+/phpunit.xml
+
+# Composer
+/composer.phar
+/composer.lock        # remove if you commit this file
+
+# --- Angular ---
+# Angular build output
+/dist/
+/build/
+
+# TypeScript build cache
+/out-tsc/
+
+# Angular cache
+/.angular/cache
+
+# Test coverage
+/coverage/
+
+# Environment files (avoid committing secrets)
+/src/environments/environment*.ts
+
+# Node dependencies
+/node_modules/
+
+# --- Common ---
+# Editor directories and files
+/.idea/
+/.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS generated files
+.DS_Store
+Thumbs.db

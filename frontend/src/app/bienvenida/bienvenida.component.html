@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <i class="bi bi-box-seam"></i>
+      Sistema de Inventario Gestock
+    </a>
+    <div class="d-flex">
+      <a (click)="irAGestock()" class="btn btn-primary" role="button">IR A GESTOCK</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">Gestiona tu inventario de forma inteligente</h1>
+        <p class="lead mb-4">Una solución completa para el control y gestión de tu inventario. Optimiza tus procesos y toma mejores decisiones.</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img [src]="imagenBienvenida" alt="Bienvenida Gestock" class="img-fluid" style="max-width: 400px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Características Principales</h2>
+      <p class="text-muted">Descubre todo lo que puedes hacer con nuestro sistema</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-graph-up feature-icon"></i>
+          <h3>Reportes y Estadísticas</h3>
+          <p>Genera informes detallados y visualiza estadísticas en tiempo real para tomar mejores decisiones.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-box-seam feature-icon"></i>
+          <h3>Control de Inventario</h3>
+          <p>Gestiona entradas, salidas y stock de productos de manera eficiente y precisa.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-people feature-icon"></i>
+          <h3>Gestión de Usuarios</h3>
+          <p>Administra roles y permisos para mantener la seguridad de tu información.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="stat-card">
+          <i class="bi bi-box feature-icon"></i>
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Productos Gestionados</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <i class="bi bi-people feature-icon"></i>
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Usuarios Activos</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <i class="bi bi-graph-up feature-icon"></i>
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Satisfacción</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Sistema de Gestión de Inventario</h4>
+        <p>Una solución moderna para la gestión eficiente de tu inventario.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p>&copy; 2025 Todos los derechos reservados</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,102 @@
+:root {
+  --primary-color: #1b18df;
+  --secondary-color: #858796;
+  --success-color: #1cc88a;
+  --info-color: #f4f5f5;
+}
+
+body {
+  background: linear-gradient(135deg, #304177 0%, #f0f5f1 100%);
+  min-height: 100vh;
+}
+
+.navbar {
+  background: rgb(45, 8, 255);
+  box-shadow: 0 2px 4px rgba(241, 12, 12, 0.1);
+}
+
+.hero-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0d2e92 100%);
+  color: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.feature-card {
+  background: rgb(235, 228, 228);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.15rem 1.75rem rgba(121, 110, 110, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0a46fa;
+  border-color: #224abe;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(218, 204, 204, 0.2);
+}
+
+.stats-section {
+  padding: 4rem 0;
+  background: rgb(27, 4, 235);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #f7ebeb;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  background: #f8f7f7;
+  color: rgb(6, 10, 252);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,65 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Sistema de Inventario</h1>
+      <p class="text-muted">Inicia sesión para continuar</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Ingresa tu correo electrónico"
+          [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          required
+          autofocus
+        />
+        <div class="invalid-feedback" *ngIf="loginForm.get('email')?.errors?.['required']">
+          El correo electrónico es requerido
+        </div>
+        <div class="invalid-feedback" *ngIf="loginForm.get('email')?.errors?.['email']">
+          Ingrese un correo electrónico válido
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Ingresa tu contraseña"
+          [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          required
+        />
+        <div class="invalid-feedback" *ngIf="loginForm.get('password')?.errors?.['required']">
+          La contraseña es requerida
+        </div>
+      </div>
+      <div class="mb-3 text-end">
+        <a routerLink="/forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="remember" formControlName="remember" />
+        <label class="form-check-label" for="remember">Recordarme</label>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || submitting">
+          <span *ngIf="submitting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          {{ submitting ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
+        </button>
+      </div>
+      <div class="text-center mt-3">
+        <a [routerLink]="['/register']" class="text-decoration-none">¿No tienes una cuenta? Regístrate</a>
+      </div>
+      <hr />
+      <img src="assets/images/Gestock.png" alt="Logo Sistema de Inventario" class="img-fluid rounded shadow d-block mx-auto" style="max-width: 50px; max-height: 50px; object-fit: contain; background: white; padding: 0.1rem;" />
+    </form>
+  </div>
+</div>

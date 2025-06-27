@@ -1,0 +1,12 @@
+<div style="padding: 2rem;">
+  <h2>Panel de Administración</h2>
+  <button (click)="limpiarCache()" [disabled]="loading" style="margin-bottom: 1rem;">
+    {{ loading ? 'Limpiando caché...' : 'Limpiar caché' }}
+  </button>
+  <div *ngIf="mensaje" style="color: green; margin-bottom: 1rem;">{{ mensaje }}</div>
+  <ul style="list-style: none; padding: 0;">
+    <li><a routerLink="/admin/usuarios">Gestión de Usuarios</a></li>
+    <li><a routerLink="/admin/reportes">Reportes</a></li>
+    <li><a routerLink="/admin/permisos">Permisos</a></li>
+  </ul>
+</div>

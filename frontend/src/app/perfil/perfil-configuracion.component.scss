@@ -1,0 +1,24 @@
+// Tema claro y oscuro
+h2 {
+  color: #1677ff;
+  margin-bottom: 1rem;
+}
+p {
+  color: #333;
+}
+
+.dark-theme {
+  background: #181818 !important;
+  color: #f1f1f1 !important;
+}
+.dark-theme h2, .dark-theme label, .dark-theme p, .dark-theme .mat-form-field-label {
+  color: #90caf9 !important;
+}
+.dark-theme .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #90caf9 !important;
+  border-color: #90caf9 !important;
+}
+.dark-theme .mat-input-element, .dark-theme input, .dark-theme .mat-stroked-button, .dark-theme .mat-raised-button {
+  background: #222 !important;
+  color: #f1f1f1 !important;
+}

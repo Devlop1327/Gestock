@@ -21,10 +21,6 @@ Requisitos previos
 - Angular CLI (`npm install -g @angular/cli`)
 - XAMPP (Apache + MySQL)
 
-Clonar el repositorio
-- git clone https://github.com/Jn-Mena/Gestock.git
-- cd Gestock
-
 
 Opción rápida (solo Windows)
 Ejecuta el script que inicia todo automáticamente:
